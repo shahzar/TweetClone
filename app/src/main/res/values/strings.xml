@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TwitterClone</string>
+    <string name="msg_tweet">Tweet your reply</string>
 </resources>

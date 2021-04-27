@@ -7,6 +7,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.google.gson.GsonBuilder
 import com.shahzar.twitterclone.BuildConfig
+import com.shahzar.twitterclone.data.UserRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -21,5 +22,10 @@ class NetworkModule {
 
     @Provides
     fun provideGson(): GsonConverterFactory = GsonConverterFactory.create(GsonBuilder().create())
+
+    @Provides
+    fun provideUserRepository(): UserRepository{
+        return UserRepository()
+    }
 
 }

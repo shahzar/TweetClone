@@ -15,22 +15,6 @@ open class BaseViewModel : ViewModel(), CoroutineScope {
     val onError: LiveData<String>
         get() = _onError
 
-    fun <T> ioLaunch(block: suspend () -> T, onSuccess: (T) -> Unit = {}, onFailure: ((t:Throwable) -> Unit)? = null) = launch {
-
-        runCatching {
-            block.invoke()
-        }
-        .onFailure {
-            if (onFailure == null) {
-                _onError.value = it.message
-            }
-            onFailure?.invoke(it)
-        }
-        .onSuccess {
-            onSuccess.invoke(it)
-        }
-    }
-
     fun showError(msg: String) {
         _onError.value = msg
     }
