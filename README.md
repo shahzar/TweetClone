@@ -15,3 +15,7 @@
 ### Features pending
 - Registration
 - UI according to provided design
+
+### Test accounts
+lemajal927@sejkt.com - 123456 <br/>
+renop68360@sumwan.com - 123456
